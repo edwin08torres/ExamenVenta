@@ -1,12 +1,18 @@
+using Microsoft.EntityFrameworkCore;
 using SistemaVentas.AppWeb.Utilidades.AutoMapper;
 
 using SistemaVentas.IOC;
 
 var builder = WebApplication.CreateBuilder(args);
+var connectionString = builder.Configuration.GetConnectionString("AwConnectionString");
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<DbContext>(options =>
+    options.UseSqlServer(connectionString));
 
+// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddEndpointsApiExplorer();
 //Todas las dependecias que esten en IOC seran cargadas hacia la appWeb
 builder.Services.InyectarDependencia(builder.Configuration);
 
