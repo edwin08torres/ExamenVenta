@@ -27,10 +27,10 @@ namespace SistemaVentas.AppWeb.Controllers
         //    return View();
         //}
 
-        //public IActionResult HistorialVenta()
-        //{
-        //    return View();
-        //}
+        public IActionResult HistorialVenta()
+        {
+            return View();
+        }
 
         [HttpGet]
         public async Task<IActionResult> ListaTipoDocumentoVenta()

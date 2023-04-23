@@ -4,9 +4,9 @@ using SistemaVentas.AppWeb.Utilidades.AutoMapper;
 using SistemaVentas.IOC;
 
 var builder = WebApplication.CreateBuilder(args);
-var connectionString = builder.Configuration.GetConnectionString("AwConnectionString");
+var connectionString = builder.Configuration.GetConnectionString("CadenaSQL");
 
-// Add services to the container.
+//Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<DbContext>(options =>
     options.UseSqlServer(connectionString));

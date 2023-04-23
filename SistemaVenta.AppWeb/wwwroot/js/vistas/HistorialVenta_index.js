@@ -60,7 +60,7 @@ $("#btnBuscar").click(function () {
     $cardBody.find("div.row").LoadingOverlay("show");
 
     // Realizar la petición al servidor
-    fetch(`/Venta/Historial?numeroVenta=${numeroVenta}&fechaInicio=${fechaInicio}&fechaFin=${fechaFin}`)
+    fetch(`/Ventas/Historial?numeroVenta=${numeroVenta}&fechaInicio=${fechaInicio}&fechaFin=${fechaFin}`)
         .then(response => {
             // Ocultar el overlay de carga
             $cardBody.find("div.row").LoadingOverlay("hide");
